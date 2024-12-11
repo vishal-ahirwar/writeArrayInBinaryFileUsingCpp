@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-
+#include<colors.hpp>
 int main(int argc, char *argv[])
 {
     std::vector<std::string> data{};
@@ -25,13 +25,14 @@ int main(int argc, char *argv[])
                 break;
         };
         file.close();
-        std::cout << "data read : \n";
+        std::cout <<YELLOW<<"data read : \n"<<WHITE;
         for (const std::string &str : data)
-            std::cout << str << "\n";
+            std::cout << str <<" ";
+        std::cout<<"\n";
     }
     else
     {
-        std::cout << "error!\n";
+        std::cout << RED<<"error!\n"<<WHITE;
     }
     return 0;
 };

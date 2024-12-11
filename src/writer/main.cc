@@ -3,6 +3,7 @@
 // Copyright 2023 Vishal Ahirwar //replace it with your copyright notice!
 #include <iostream>
 #include <fstream>
+#include<colors.hpp>
 
 int main(int argc, char *argv[])
 {
@@ -16,18 +17,18 @@ int main(int argc, char *argv[])
             file.write(reinterpret_cast<char *>(&size), sizeof size);
             if (file.write((arr_str + i)->c_str(), size))
             {
-                std::cout << "success\n";
+                std::cout <<GREEN<< "success\n"<<WHITE;
             }
             else
             {
-                std::cout << "failed to write array\n";
+                std::cout <<RED<< "failed to write array\n"<<WHITE;
             };
         };
         file.close();
     }
     else
     {
-        std::cout << "error!\n";
+        std::cout <<RED<< "error!\n"<<WHITE;
     }
     return 0;
 };
